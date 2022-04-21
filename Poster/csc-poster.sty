@@ -1,0 +1,80 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{csc-poster}[2002/11/07 v1.2]
+
+%%%%%%%%%%%
+%% PACKAGES
+%%%%%%%%%%%
+\RequirePackage{fullpage}
+  \addtolength{\topmargin}{0.5in}
+  \addtolength{\leftmargin}{-0.5in}
+  \addtolength{\rightmargin}{-0.5in}
+  \addtolength{\textheight}{1.3in}
+\RequirePackage{graphicx}
+\RequirePackage[T1]{fontenc}
+
+%%%%%%%%%%%%%%
+%% PAGE LAYOUT
+%%%%%%%%%%%%%%
+\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%
+%% FONT COMMANDS
+%%%%%%%%%%%%%%%%
+\providecommand{\HUGE}{\@setfontsize\HUGE{35.83}{35.83}}
+\newcommand{\cscfamily}{\renewcommand{\rmdefault}{pnc}}
+\newcommand{\csctitlefont}{\cscfamily \HUGE \bf}
+\newcommand{\cscspeakerfont}{\cscfamily \HUGE \it}
+\newcommand{\csctimefont}{\cscfamily \LARGE \bf}
+\newcommand{\cscsubtitlefont}{\cscfamily \LARGE \rm}
+\newcommand{\cscbigsubtitlefont}{\cscfamily \Huge \rm}  %% DEPRECATED!
+\newcommand{\cscbodyfont}{\Large}
+%
+
+%%%%%%%%%%%%%%%
+%% DEFINE SKIPS
+%%%%%%%%%%%%%%%
+\newcommand{\cscsmallskip}{\vspace{0.1in}}
+\newcommand{\cscmedskip}{\vspace{0.3in}}
+\newcommand{\cscbigskip}{\vspace{0.5in}}
+
+%%%%%%%%%%%%%%%%
+%% DEFINE WRITES
+%%%%%%%%%%%%%%%%
+\newcommand{\cschead}[2]{%
+  \begin{center}%
+    \csctitlefont #1%
+    \if\@empty#2\relax%
+    \else%
+      \\%
+      \cscspeakerfont%
+      by\\%
+      #2%
+    \fi%
+  \end{center}%
+  \cscbodyfont\par%
+  \cscmedskip\@afterindentfalse\@afterheading%
+}
+
+\newcommand{\cscfoot}[4]{%
+  \begin{center}%
+    \csctimefont #1\\%
+    #2\\%
+    #3\\%
+    \if\@empty#4\relax%
+    \else%
+      \cscmedskip%
+      #4\\%
+    \fi%
+%    \cscbigskip%
+%    \includegraphics[height=1.5in]{csclogo}%
+  \end{center}%
+}
+
+\newcommand{\cscsubtitle}[1]{%
+  \if\@empty#1\relax%
+  \else%
+    \centerline{\cscsubtitlefont #1}%
+    \cscmedskip\@afterindentfalse\@afterheading%
+  \fi%
+}
+\endinput

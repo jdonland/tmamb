@@ -1,0 +1,71 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage{problems}
+\title{\emph{To Mock A Mockingbird} Reading Group\\Week 12 Problems}
+\begin{document}
+\maketitle
+
+\begin{prob}{24.1}
+Let $n^+$ denote the successor of a natural number $n$ and let $\overline{0} = I$ and $\overline{n^+} = Vf\overline{n}$. Prove that if $n \neq m$ then $\overline{n} \neq \overline{m}$. 
+\end{prob}
+
+\begin{prob}{24.2}
+Find a bird P such that $P\overline{n^+} = \overline{n}$.
+\end{prob}
+
+\begin{prob}{24.3}
+Find a bird $Z$ such that $Z\overline{0} = t$ and $Z\overline{n} = f$ if $n \neq 0$. 
+\end{prob}
+
+\begin{prob}{24.4}
+Find a bird $A$ such that for any birds $x$ and $y$, $A\overline{0}xy = x$ and $A\overline{n}xy = y$ if $n > 0$. 
+\end{prob}
+
+\begin{prob}{24.5-7}
+Explain how to find birds $\small \textcircled{\scriptsize \textsf{+}}$, $\small \textcircled{\scriptsize $\times$}$, and $\small \textcircled{\scriptsize \textsf{E}}$ such that $\small \textcircled{\scriptsize \textsf{+}} \overline{n} \overline{m} = \overline{n + m}$, $\small \textcircled{\scriptsize $\times$}\overline{n}\overline{m} = \overline{n \times m}$, and $\small \textcircled{\scriptsize \textsf{E}}\overline{n}\overline{m} = \overline{n^m}$.
+\end{prob}
+
+\begin{prob}{24.8}
+A bird $A$ is a \emph{property} bird when $A\overline{n}$ is a propositional bird. A bird property bird $A$ \emph{computes} a set of numbers when $A\overline{n} = t$ if $n$ is a member of the set and $A\overline{n} = f$ otherwise. A set of numbers is \emph{computable} when there is a bird that computes it. Explain how to find a bird $A$ that computes the set of even numbers.
+\end{prob}
+
+\begin{prob}{24.9}
+A bird $A$ is \emph{relational} when $A\overline{a}\overline{b}$ is a propositional bird. Explain how to find a bird $g$ such that $g\overline{a}\overline{b} = t$ if $a > b$ and $g\overline{a}\overline{b} = f$ otherwise. (Hint: $>$ is the only relation such that 1) if $a = 0$ then $a > b$ is false, 2) if $a \neq 0$ and $b = 0$ then $a > b$ is true, and 3) if $a \neq 0$ and $b \neq 0$ then $a > b$ is true if and only if $a - 1 > b - 1$.)
+\end{prob}
+
+\begin{prob}{24.10}
+A relational bird $A$ is \emph{regular} if for every number $n$, there is at least one number $m$ such that $A\overline{n}\overline{m} = t$. A bird $A'$ is a \emph{minimizer} of a regular relational bird $A$ if for every number $n$, $A'\overline{n} = \overline{k}$ where $k$ is the smallest number such that $A\overline{n}\overline{k} = t$. Prove that every regular relational bird has a minimizer. (Hint: First explain how to find a bird $A_1$ such that 1) if $A\overline{n}\overline{m} = f$ then $A_1\overline{n}\overline{m} = A_1\overline{n}\overline{m^+}$ and 2) if $A\overline{n}\overline{m} = t$ then $A_1\overline{n}\overline{m} = \overline{m}$. Then let $A' = CA_1\overline{0}$ and show that it minimizes $A$.)
+\end{prob}
+
+\begin{prob}{24.11}
+The \emph{length} of a number its number of digits. Find a bird $\ell$ such that if $n$ has length $k$ then $\ell\overline{n} = \overline{k}$. (Chief Bird Mocker's Note: Be careful about the length of 0! The provided solution to this problem overlooks this subtlety.)
+\end{prob}
+
+\begin{prob}{24.12}
+The \emph{concatenation} of $n$ and $m$, denoted $n \ast m$, is the number obtained by writing the digits of $n$ followed by the digits of $m$. Explain how to find a bird $\small \textcircled{\scriptsize \textasteriskcentered}$ such that $\small \textcircled{\scriptsize \textasteriskcentered}\overline{a}\overline{b} = \overline{a \ast b}$.
+\end{prob}
+
+\begin{prob}{25.1}
+A \emph{term} is $S$, $K$, or $(XY)$ where $X$ and $Y$ are each terms. Every term names a bird. A \emph{sentence} is $X = Y$ where $X$ and $Y$ are each terms. $X = Y$ is true if and only if $X$ and $Y$ are two names for the same bird. The \emph{G\"{o}del numbers} of the symbols $S$, $K$, $($, $)$, and $=$ are 1, 2, 3, 4, and 5 respectively. The G\"{o}del number of a term or a sentence is the concatenation of the G\"{o}del numbers of its symbols. A \emph{numeral} is any of the birds $\overline{0}$, $\overline{1}$, $\overline{2}$... etc. Let $n^\#$ denote the G\"{o}del number of the numeral $\overline{n}$. Let $s$ denote the G\"{o}del number of the bird $\sigma$ such that $\sigma \overline{n} = \overline{n^+}$. Then $(n^+)^\# = 3 \ast s \ast n^\# \ast 4$. Explain how to find a bird $\delta$ such that $\delta \overline{n} = \overline{n^\#}$.
+\end{prob}
+
+\begin{prob}{25.2}
+The \emph{G\"{o}del numeral} of an expression $X$, denoted $\ulcorner X \urcorner$, is the numeral representing the G\"{o}del number of $X$. The \emph{norm} of $X$ is $X\ulcorner X \urcorner$. Derive a normalizer bird $\Delta \overline{n} = \overline{n \ast n^\#}$ using $\small \textcircled{\scriptsize \textasteriskcentered}$ and $\delta$. (Chief Bird Mocker's Note: The provided solution to this problem is needlessly complicated. See if you can find a more elegant one!)
+\end{prob}
+
+\begin{prob}{25.3}
+A term $X$ \emph{designates} a number $n$ if the sentence $X = \overline{n}$ is true. A term is \emph{numerical} if it designates some number. Prove that for any term $A$, there is a term $X$ such that $A\ulcorner X \urcorner = X$ is true. (Chief Bird Mocker's Note: This one is tough! Ask a Certified Bird Mocker for a hint if you aren't getting anywhere with it.)
+\end{prob}
+
+\begin{prob}{25.4}
+A sentence $X$ is a \emph{G\"{o}del sentence} of a set of numbers $\mathcal{S}$ if either $X$ is true and its G\"{o}del number is in $\mathcal{S}$ or $X$ is false and its G\"{o}del number is not in $\mathcal{S}$. Prove that every computable set has a G\"{o}del sentence. (Hint: If $n$ is the G\"{o}del number of X, then $n \ast 52$ is the G\"{o}del number of $X = t$. First prove that if $\mathcal{S}$ is computable, then the set $\mathcal{S}^*$ consisting of all $n$ such that $n \ast 52$ is in $\mathcal{S}$ is also computable.)
+\end{prob}
+
+\begin{prob}{25.5}
+Prove that if $\mathcal{S}$ is computable, then the set $\mathcal{S}'$ consisting of all numbers not in $\mathcal{S}$ is also computable.
+\end{prob}
+
+\begin{prob}{25.5}
+Answer the Grand Question: Prove that the set $\mathcal{T}$ consisting of the  G\"{o}del numbers of all true sentences is not computable.
+\end{prob}
+
+\end{document}

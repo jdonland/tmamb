@@ -1,0 +1,24 @@
+\usepackage{amsthm}
+\usepackage{mathabx}
+\usepackage{nopageno}
+\usepackage{xpatch}
+\usepackage{mathastext}
+
+% set the math font to typewriter style
+\MTfamily{\ttdefault}\Mathastext
+
+\date{}
+\author{}
+
+% problem environment with manual numbering
+\theoremstyle{definition}%
+\newtheorem{probinner}{}
+\newenvironment{prob}[1]{%
+  \renewcommand\theprobinner{#1}%
+  \probinner
+}{\endprobinner}
+
+% suppress dot after problem number
+\makeatletter
+\xpatchcmd{\@thm}{\thm@headpunct{.}}{\thm@headpunct{}}{}{}
+\makeatother
