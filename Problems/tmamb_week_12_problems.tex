@@ -46,6 +46,8 @@ The \emph{length} of a number its number of digits. Find a bird $\ell$ such that
 The \emph{concatenation} of $n$ and $m$, denoted $n \ast m$, is the number obtained by writing the digits of $n$ followed by the digits of $m$. Explain how to find a bird $\small \textcircled{\scriptsize \textasteriskcentered}$ such that $\small \textcircled{\scriptsize \textasteriskcentered}\overline{a}\overline{b} = \overline{a \ast b}$.
 \end{prob}
 
+\noindent(Chief Bird Mocker's Note: The third rule for logical equality in the preamble of Chapter 25 contains an error. It should read: ``If we can prove $X = Y$, then for any term $Z$ we can conclude that $XZ = YZ$ and $ZX = ZY$.")
+
 \begin{prob}{25.1}
 A \emph{term} is $S$, $K$, or $(XY)$ where $X$ and $Y$ are each terms. Every term names a bird. A \emph{sentence} is $X = Y$ where $X$ and $Y$ are each terms. $X = Y$ is true if and only if $X$ and $Y$ are two names for the same bird. The \emph{G\"{o}del numbers} of the symbols $S$, $K$, $($, $)$, and $=$ are 1, 2, 3, 4, and 5 respectively. The G\"{o}del number of a term or a sentence is the concatenation of the G\"{o}del numbers of its symbols. A \emph{numeral} is any of the birds $\overline{0}$, $\overline{1}$, $\overline{2}$... etc. Let $n^\#$ denote the G\"{o}del number of the numeral $\overline{n}$. Let $s$ denote the G\"{o}del number of the bird $\sigma$ such that $\sigma \overline{n} = \overline{n^+}$. Then $(n^+)^\# = 3 \ast s \ast n^\# \ast 4$. Explain how to find a bird $\delta$ such that $\delta \overline{n} = \overline{n^\#}$.
 \end{prob}
