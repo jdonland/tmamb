@@ -3,6 +3,7 @@
 \usepackage{nopageno}
 \usepackage{xpatch}
 \usepackage[noendash]{mathastext}
+\usepackage{mathabx}
 
 % suppress date and author information
 \date{}
@@ -35,3 +36,19 @@
   \noindent\emph{These problem statements are condensed versions of those found in the book. Some contain errata and additional hints. We recommend that you read the relevant section of the book before referring to this document.}
   \vspace{1em}
 }
+
+% circled E operator
+\makeatletter
+\newcommand\incircbin
+{%
+  \mathpalette\@incircbin
+}
+\newcommand\@incircbin[2]
+{%
+  \mathbin%
+  {%
+    \ooalign{\hidewidth$#1#2$\hidewidth\crcr$#1\ovoid$}%
+  }%
+}
+\newcommand{\oexp}{\incircbin{\raisebox{1pt}{\tiny \textsf{E}}}}
+\makeatother
