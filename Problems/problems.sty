@@ -4,11 +4,12 @@
 \usepackage{xpatch}
 \usepackage[noendash]{mathastext}
 
-% set the math font to typewriter style
-\MTfamily{\ttdefault}\Mathastext
-
+% suppress date and author information
 \date{}
 \author{}
+
+% set the math font to typewriter style
+\MTfamily{\ttdefault}\Mathastext
 
 % problem environment with manual numbering
 \theoremstyle{definition}%
@@ -23,6 +24,12 @@
 \xpatchcmd{\@thm}{\thm@headpunct{.}}{\thm@headpunct{}}{}{}
 \makeatother
 
+% keep adjacent overlines from running together
+\newcommand\nindent{.5pt}
+\newcommand\noverline[1]{%
+  \kern\nindent\overline{\kern-\nindent#1\kern-\nindent}\kern\nindent}
+
+% disclaimer
 \newcommand{\disclaimer}[0]{%
   \noindent\emph{These problem statements are condensed versions of those found in the book. Some contain errata and additional hints. We recommend you read the relevant section of the book before referring to this document.}
   \vspace{1em}
